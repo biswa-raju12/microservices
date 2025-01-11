@@ -3,13 +3,14 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for Cards" enabled="true">
+      <profile name="Annotation profile for Loans" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
+        <module name="Loans" />
         <module name="Cards" />
         <module name="Accounts" />
       </profile>
@@ -19,6 +20,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Accounts" options="-parameters" />
       <module name="Cards" options="-parameters" />
+      <module name="Loans" options="-parameters" />
     </option>
   </component>
 </project>
