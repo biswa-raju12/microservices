@@ -1,9 +1,8 @@
-package com.biswapractice.Accounts.Entity;
+package com.biswapractice.Cards.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -18,6 +17,7 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public class BaseEntity {
+
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime createdAt;
@@ -33,16 +33,6 @@ public class BaseEntity {
     @LastModifiedBy
     @Column(insertable = false)
     private String updatedBy;
-
-    @Override
-    public String toString() {
-        return "BaseEntity{" +
-                "createdAt=" + createdAt +
-                ", createdBy='" + createdBy + '\'' +
-                ", updatedAt=" + updatedAt +
-                ", updatedBy='" + updatedBy + '\'' +
-                '}';
-    }
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
@@ -75,4 +65,15 @@ public class BaseEntity {
     public void setUpdatedBy(String updatedBy) {
         this.updatedBy = updatedBy;
     }
+
+    @Override
+    public String toString() {
+        return "BaseEntity{" +
+                "createdAt=" + createdAt +
+                ", createdBy='" + createdBy + '\'' +
+                ", updatedAt=" + updatedAt +
+                ", updatedBy='" + updatedBy + '\'' +
+                '}';
+    }
 }
+

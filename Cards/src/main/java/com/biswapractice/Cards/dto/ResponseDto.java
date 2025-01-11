@@ -1,16 +1,16 @@
-package com.biswapractice.Accounts.dto;
+package com.biswapractice.Cards.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-
-
 @Schema(
         name = "Response",
         description = "Schema to hold successful response information"
 )
-public class ResponseDTO {
+
+public class ResponseDto {
+
     @Schema(
             description = "Status code in the response"
     )
@@ -21,7 +21,9 @@ public class ResponseDTO {
     )
     private String statusMsg;
 
-    public ResponseDTO() {
+    public ResponseDto(String statusCode, String statusMsg) {
+        this.statusCode = statusCode;
+        this.statusMsg = statusMsg;
     }
 
     public String getStatusCode() {
@@ -40,8 +42,11 @@ public class ResponseDTO {
         this.statusMsg = statusMsg;
     }
 
-    public ResponseDTO(String statusCode, String statusMsg) {
-        this.statusCode = statusCode;
-        this.statusMsg = statusMsg;
+    @Override
+    public String toString() {
+        return "ResponseDto{" +
+                "statusCode='" + statusCode + '\'' +
+                ", statusMsg='" + statusMsg + '\'' +
+                '}';
     }
 }

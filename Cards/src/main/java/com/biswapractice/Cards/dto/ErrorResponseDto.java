@@ -1,18 +1,19 @@
-package com.biswapractice.Accounts.dto;
+package com.biswapractice.Cards.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
+
 
 @Schema(
         name = "ErrorResponse",
         description = "Schema to hold error response information"
 )
-public class ErrorResponseDTO {
+public class ErrorResponseDto {
+
     @Schema(
             description = "API path invoked by client"
     )
@@ -33,7 +34,7 @@ public class ErrorResponseDTO {
     )
     private LocalDateTime errorTime;
 
-    public ErrorResponseDTO(String apiPath, HttpStatus errorCode, String errorMessage, LocalDateTime errorTime) {
+    public ErrorResponseDto(String apiPath, HttpStatus errorCode, String errorMessage, LocalDateTime errorTime) {
         this.apiPath = apiPath;
         this.errorCode = errorCode;
         this.errorMessage = errorMessage;
@@ -72,6 +73,14 @@ public class ErrorResponseDTO {
         this.errorTime = errorTime;
     }
 
-    public ErrorResponseDTO() {
+    @Override
+    public String toString() {
+        return "ErrorResponseDto{" +
+                "apiPath='" + apiPath + '\'' +
+                ", errorCode=" + errorCode +
+                ", errorMessage='" + errorMessage + '\'' +
+                ", errorTime=" + errorTime +
+                '}';
     }
 }
+
